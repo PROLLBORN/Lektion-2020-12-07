@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Räkna ut dagar</title>
+    <script>
+        function getData(){
+            let year = document.getElementById("year").value;
+            let day = document.getElementById("day").value;
+            let month = document.getElementById("month").value;
+
+            console.log(year);
+
+            let result = `År = ${year}
+            Dag = ${day}
+            Månad = ${month}`
+
+            document.getElementById("result").innerText= result;
+
+        }
+    </script>
+</head>
+<body>
+    
+
+    <input type="number" id="year" min = 1900 max = 2040 placeholder="2020">
+    <br>
+    <br>
+    <input type="number" id="day" min = 1 max = 31 placeholder="5">
+    <br>
+    <br>
+
+    <select id="month">
+        <option>Januari</option>
+        <option>Februari</option>
+        <option>Mars</option>
+              <option>April</option>
+              <option>Maj</option>
+              <option>Juni</option>
+              <option>Juli</option>
+              <option>Augusti</option>
+              <option>September</option>
+              <option>Oktober</option>
+              <option>November</option>
+              <option>December</option>
+
+    </select>
+
+    <br>
+    <button onclick="getData()">Hämta data</button>
+    <br>
+    <h3 id="result"></h3>
+</body>
+</html>

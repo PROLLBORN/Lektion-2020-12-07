@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function showDays(){
+            
+            let selected = document.getElementById("day").value;
+            console.log(selected);
+
+            // Millisekunder sedan 1970 1 januari
+
+            let selectedDate = new Date(selected);
+
+            let today = new Date();
+
+            let diff = Math.floor((selectedDate-today)/1000) ;
+
+            // Hur många sekunder på en dag ?
+
+            // 24 * 60 * 60 = 86400 s
+
+            let daysLeft = Math.floor(diff/86400)+1;
+
+            // - eller +
+
+            let message = "Det är så här många dagar kvar"
+
+            if (daysLeft < 0) message ="Det har passerat så här många dagar" ;
+            
+            document.getElementById("result").innerText = message + " " + daysLeft;
+        
+        }
+
+
+    </script>
+</head>
+<body>
+
+    <label for="start">Välj ett datum</label>
+    
+    <input type="date" id="day" name="end"
+    value="2020-12-01"
+    min="2018-01-01" max="2025-12-31">
+
+    <br>
+    <button onclick="showDays()">Visa antal dagar</button>
+    <br>
+    <h3 id="result">Dagar kvar till valt datum = </h3>
+
+</body>
+</html>
